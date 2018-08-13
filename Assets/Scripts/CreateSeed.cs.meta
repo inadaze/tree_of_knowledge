@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: eb908f551c06aa348b3812800d1ba0ed
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - Seed: {fileID: 1394218820395204, guid: b794a7b4791cee349a8c7ee207c62223, type: 2}
+  - CreateSeedButton: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
