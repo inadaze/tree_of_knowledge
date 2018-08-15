@@ -225,7 +225,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 89.61666
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -328,7 +328,7 @@ GameObject:
   - component: {fileID: 2005771696}
   - component: {fileID: 2005771695}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -342,11 +342,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2005771694}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb908f551c06aa348b3812800d1ba0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 107156cf62c1cb44da7d711b82390048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Seed: {fileID: 1394218820395204, guid: b794a7b4791cee349a8c7ee207c62223, type: 2}
+  seed: {fileID: 0}
+  myCanvas: {fileID: 0}
   CreateSeedButton: {fileID: 114818615364759442, guid: 905af8c2909894b468ea5f534420b39d,
+    type: 2}
+  SeedInputField: {fileID: 114317166919582512, guid: 062ffd79aea06b6438dea91a7bd11d5c,
     type: 2}
 --- !u!4 &2005771696
 Transform:
