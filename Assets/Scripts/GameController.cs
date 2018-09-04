@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class GameController : MonoBehaviour {
 
@@ -25,6 +26,12 @@ public class GameController : MonoBehaviour {
 		button1.transform.SetParent(myCanvas.transform, false);
 		button1.onClick.AddListener(CreateSeed);
 
+		GameObject ground = GameObject.CreatePrimitive(PrimitiveType.Plane);
+		var groundCollider = ground.AddComponent<BoxCollider>();
+		groundCollider.isTrigger = true;
+		//groundCollider.center = new Vector3(400, -90, 35);
+		ground.transform.position = new Vector3(400, -90, 35);
+		ground.transform.localScale = new Vector3(80, 80, 80);
 	}
 	
 	// Update is called once per frame
@@ -35,11 +42,17 @@ public class GameController : MonoBehaviour {
 	void CreateSeed(){
 		seed = ScriptableObject.CreateInstance<Seed>();
 		seed.seedSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+		seed.seedSphere.AddComponent(Type.GetType("SeedActions"));
+		var seedSphereCollider = seed.seedSphere.AddComponent<BoxCollider>();
+		var seedSphereRigidBody = seed.seedSphere.AddComponent<Rigidbody>();
+		seedSphereRigidBody.useGravity = false;
+		//seedSphereCollider.center = new Vector3(0, 0, 200);
 		seed.seedSphere.transform.position = new Vector3(300, 0, 200);
 		seed.seedSphere.transform.localScale = new Vector3(20F, 20F, 20F);
 		seed.ideaInputField = Instantiate(SeedInputField, new Vector3(100, 0, 200), Quaternion.identity);
 		seed.ideaInputField.transform.SetParent(myCanvas.transform, false);
 		seed.ideaInputField.onEndEdit.AddListener(delegate {PrintInput(seed.ideaInputField);});
+
 		
 	}
 
@@ -47,7 +60,8 @@ public class GameController : MonoBehaviour {
 		
 		seed.idea = input.text;
 		Debug.Log(seed.idea);
-		
+		GameObject ObjFind = GameObject.Find ("SeedInputField(Clone)");
+		ObjFind.SetActive(false);
 	}
 
 }
