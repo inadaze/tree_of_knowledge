@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 
 public class SeedActions : MonoBehaviour {
@@ -29,7 +30,8 @@ public class SeedActions : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other){
-		Debug.Log("Hit");
+		Debug.Log("hit");
+
 
 	}
 }
